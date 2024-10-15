@@ -6,7 +6,7 @@ public class elementsUI : MonoBehaviour
     
    
 
-    public void izadji()
+    public void Quit()
     {
         Application.Quit();
     }
