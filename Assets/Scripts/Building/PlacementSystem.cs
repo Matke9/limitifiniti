@@ -16,10 +16,16 @@ public class PlacementSystem : MonoBehaviour
     int selectedBlockID = -1;
     [SerializeField]
     GameObject ship;
+    [SerializeField]
+    GameObject gridShader;
+
+    private GridData blockData;
 
     void Start()
     {
         StopPlacement();
+        blockData = new();
+        blockData.AddBlock(grid.WorldToCell(grid.transform.Find("CockpitParent").position), 0);
     }
 
     public void StartPlacement(int ID)
@@ -32,6 +38,7 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
         cursor.SetActive(true);
+        gridShader.SetActive(true);
         inputManager.OnClicked += PlaceBlock;
         inputManager.OnExit += StopPlacement;
     }
@@ -45,7 +52,11 @@ public class PlacementSystem : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         Vector3Int gridPos = grid.WorldToCell(mousePos);
+        bool canPlace = blockData.CanPlaceBlock(gridPos);
+        if (!canPlace)
+            return;
         GameObject block = Instantiate(database.blocksData[selectedBlockID].Prefab, grid.transform);
+        blockData.AddBlock(gridPos, selectedBlockID);
         block.transform.position = grid.CellToWorld(gridPos);
         block.transform.rotation = ship.transform.rotation;
     }
@@ -54,6 +65,7 @@ public class PlacementSystem : MonoBehaviour
     {
         selectedBlockID = -1;
         cursor.SetActive(false);
+        gridShader.SetActive(false);
         inputManager.OnClicked -= PlaceBlock;
         inputManager.OnExit -= StopPlacement;
     }
@@ -65,6 +77,10 @@ public class PlacementSystem : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         Vector3Int gridPos = grid.WorldToCell(mousePos);
-        cursor.transform.position = grid.CellToWorld(gridPos);
+        bool canPlace = blockData.CanPlaceBlock(gridPos);
+        cursor.transform.GetChild(0).GetComponent<SpriteRenderer>().color = canPlace ? Color.white : Color.red;
+        Vector3 cursorPos = grid.CellToWorld(gridPos);
+        cursorPos.z = -2;
+        cursor.transform.position = cursorPos;
     }
 }
