@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ee879b15609854289e214625fe5ad1, type: 3}
+  m_Name: BlocksDatabase
+  m_EditorClassIdentifier: 
+  blocksData:
+  - <Name>k__BackingField: Cockpit
+    <ID>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 3016155474014527910, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
+    <needTop>k__BackingField: 0
+    <needBottom>k__BackingField: 0
+  - <Name>k__BackingField: MetalBlock
+    <ID>k__BackingField: 1
+    <Prefab>k__BackingField: {fileID: 1774461322485398431, guid: 9a630072a3933394e9dcdeee72fa4d65, type: 3}
+    <needTop>k__BackingField: 0
+    <needBottom>k__BackingField: 0
+  - <Name>k__BackingField: Thruster
+    <ID>k__BackingField: 2
+    <Prefab>k__BackingField: {fileID: 5583820124081178672, guid: 155cb76c6398fd340b6987ae87e7e083, type: 3}
+    <needTop>k__BackingField: 1
+    <needBottom>k__BackingField: 0
+  - <Name>k__BackingField: PulseCanon
+    <ID>k__BackingField: 3
+    <Prefab>k__BackingField: {fileID: 8115033291978731250, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+    <needTop>k__BackingField: 0
+    <needBottom>k__BackingField: 1
+  - <Name>k__BackingField: RapidCanon
+    <ID>k__BackingField: 4
+    <Prefab>k__BackingField: {fileID: 5583820124081178672, guid: 571ec6a292eb6904883541178bb330f9, type: 3}
+    <needTop>k__BackingField: 0
+    <needBottom>k__BackingField: 1
+  - <Name>k__BackingField: RailGun
+    <ID>k__BackingField: 5
+    <Prefab>k__BackingField: {fileID: 5583820124081178672, guid: 209602a79c0a8c2449acccd608f8d349, type: 3}
+    <needTop>k__BackingField: 0
+    <needBottom>k__BackingField: 1
