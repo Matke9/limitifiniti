@@ -35,11 +35,11 @@ MonoBehaviour:
     <needBottom>k__BackingField: 1
   - <Name>k__BackingField: RapidCanon
     <ID>k__BackingField: 4
-    <Prefab>k__BackingField: {fileID: 5583820124081178672, guid: 571ec6a292eb6904883541178bb330f9, type: 3}
+    <Prefab>k__BackingField: {fileID: 2829197280855330373, guid: aac103d65db9b6f4babc593086ed72c4, type: 3}
     <needTop>k__BackingField: 0
     <needBottom>k__BackingField: 1
   - <Name>k__BackingField: RailGun
     <ID>k__BackingField: 5
-    <Prefab>k__BackingField: {fileID: 5583820124081178672, guid: 209602a79c0a8c2449acccd608f8d349, type: 3}
+    <Prefab>k__BackingField: {fileID: 2829197280855330373, guid: 7b6c3dc7c3d7f224c9f7f503ed091442, type: 3}
     <needTop>k__BackingField: 0
     <needBottom>k__BackingField: 1
