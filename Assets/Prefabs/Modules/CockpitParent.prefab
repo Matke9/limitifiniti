@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1090042468981688275}
   - component: {fileID: 9183015446955595074}
   - component: {fileID: 2807032583390551780}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: CockpitParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7774111898600498149}
   - component: {fileID: 3836300114381483618}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
