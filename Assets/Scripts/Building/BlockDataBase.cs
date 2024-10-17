@@ -18,4 +18,8 @@ public class BlockData
     public int ID { get; private set; }
     [field: SerializeField]
     public GameObject Prefab { get; private set; }
+    [field: SerializeField]
+    public bool needTop { get; private set; }
+    [field: SerializeField]
+    public bool needBottom { get; private set; }
 }

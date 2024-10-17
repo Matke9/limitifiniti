@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GridData
 {
-    Dictionary<Vector3Int, int> placedBlocks = new();
+
+    public Dictionary<Vector3Int, int> placedBlocks = new();
     public void AddBlock(Vector3Int gridPos, int ID)
     {
         if (placedBlocks.ContainsKey(gridPos))
