@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridShader: {fileID: 1453097578}
-  player: {fileID: 0}
+  player: {fileID: 1179089453}
   multiplier: 2
   minZoom: 1
   maxZoom: 10
@@ -1357,6 +1357,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152027394}
   m_CullTransparentMesh: 1
+--- !u!4 &1179089453 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6514476438239376763, guid: 5459684891b630442abe2add0522aea4, type: 3}
+  m_PrefabInstance: {fileID: 1364986897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1364986897
 PrefabInstance:
   m_ObjectHideFlags: 0

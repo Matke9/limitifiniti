@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
         Combat
     }
 
-    CamMode camMode;
+    CamMode camMode = CamMode.Player;
 
     void Start()
     {
@@ -42,7 +42,12 @@ public class CameraController : MonoBehaviour
         }
         else if (camMode == CamMode.Player)
         {
-            camera.transform.position = player.position;
+            Vector3 camPos = player.position;
+            camPos.z = -10;
+            camera.transform.position = camPos;
+            camera.orthographicSize = 5;
+            int gridSize = Mathf.RoundToInt(camera.orthographicSize) * 4 + 1;
+            gridShader.localScale = new Vector3(gridSize, gridSize, 1);
         }
     }
 }
