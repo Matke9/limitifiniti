@@ -1,20 +1,28 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public float moveSpeed = 4f;            
-    public float distanceOffset = 5f;         
-    public float rotationSpeed = 5f;           
-    public float stopThreshold = 0.1f;         
-    public float bufferZone = 1f;              
+    private Rigidbody2D rb;
+    private Animator animator;
 
-    private Camera mainCamera;                 
+    public float moveSpeed = 4f;
+    public float distanceOffset = 5f;
+    public float rotationSpeed = 5f;
+    public float stopThreshold = 0.1f;
+    public float bufferZone = 1f;
+    public float strikeDelay = 2f;
+    private Camera mainCamera;
+
+    private bool canShoot = false;
+    private float strikeTimer = 0f;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
         mainCamera = Camera.main;
+        canShoot = false;
+        strikeTimer = 0f;
     }
 
     void FixedUpdate()
@@ -27,15 +35,18 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToCamera > distanceOffset + bufferZone)
         {
             targetPosition = Vector3.MoveTowards(transform.position, positionToFollow, moveSpeed * Time.fixedDeltaTime);
+            canShoot = false;
         }
         else if (distanceToCamera < distanceOffset - bufferZone)
         {
             Vector3 backwardDirection = (transform.position - positionToFollow).normalized;
             targetPosition = transform.position + backwardDirection * moveSpeed * Time.fixedDeltaTime;
+            canShoot = false;
         }
         else
         {
             targetPosition = transform.position;
+            canShoot = true;
         }
         rb.MovePosition(Vector2.Lerp(rb.position, targetPosition, 5*Time.deltaTime));
 
@@ -44,6 +55,17 @@ public class EnemyMovement : MonoBehaviour
         float angle = Mathf.Atan2(directionToCamera.y, directionToCamera.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+    }
+
+    private void Update()
+    {
+        strikeTimer += Time.deltaTime;
+        if (canShoot && animator != null && strikeTimer >= strikeDelay) 
+        {
+            animator.SetTrigger("shoot");
+            Debug.Log("Can Shoot!");
+            strikeTimer = 0f;
+        }
     }
 
 }

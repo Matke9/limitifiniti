@@ -158,9 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61506690e88bfb42b0a74db1ef1a46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  distanceOffset: 5
-  rotationSpeed: 5
+  moveSpeed: 30
+  distanceOffset: 0
+  rotationSpeed: 10
   stopThreshold: 0.1
   bufferZone: 1
 --- !u!61 &5345337076337940078
