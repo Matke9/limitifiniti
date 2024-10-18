@@ -912,7 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridShader: {fileID: 1453097578}
   player: {fileID: 1179089453}
-  ship: {fileID: 0}
+  ship: {fileID: 12809264}
   multiplier: 2
   minZoom: 1
   maxZoom: 10
@@ -1376,6 +1376,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: ship
+      value: 
+      objectReference: {fileID: 12809263}
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: shopUI
+      value: 
+      objectReference: {fileID: 320844620}
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: placementSystem
+      value: 
+      objectReference: {fileID: 440862226}
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: shipMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3815029232952396823, guid: 5459684891b630442abe2add0522aea4, type: 3}
       propertyPath: m_Mass
       value: 100
