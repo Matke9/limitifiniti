@@ -9,20 +9,22 @@ public class CameraController : MonoBehaviour
     Transform gridShader;
     [SerializeField]
     Transform player;
+    [SerializeField]
+    Transform ship;
     float zoomTarget;
 
     [SerializeField]
     float multiplier = 2, minZoom = 1, maxZoom = 10, smoothTime = .1f;
     float velocity = 0;
 
-    enum CamMode
+    public enum CamMode
     {
         Player,
         Build,
         Combat
     }
 
-    CamMode camMode = CamMode.Player;
+    public CamMode camMode = CamMode.Player;
 
     void Start()
     {
@@ -34,6 +36,9 @@ public class CameraController : MonoBehaviour
     {
         if (camMode == CamMode.Build)
         {
+            Vector3 camPos = ship.position;
+            camPos.z = -10;
+            camera.transform.position = camPos;
             zoomTarget -= Input.GetAxisRaw("Mouse ScrollWheel") * multiplier;
             zoomTarget = Mathf.Clamp(zoomTarget, minZoom, maxZoom);
             camera.orthographicSize = Mathf.SmoothDamp(camera.orthographicSize, zoomTarget, ref velocity, smoothTime);

@@ -8,7 +8,7 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     GameObject cursor;
     [SerializeField]
-    Grid grid;
+    public Grid grid;
     [SerializeField]
     InputManager inputManager;
     [SerializeField]
@@ -19,6 +19,9 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     GameObject gridShader;
 
+    [HideInInspector]
+    public int minX = 0, maxX = 0, minY = 0, maxY = 0;
+
     private GridData blockData;
     private List<int> fourSideBlocks = new List<int>();
 
@@ -27,7 +30,6 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
         blockData = new();
         blockData.AddBlock(grid.WorldToCell(grid.transform.Find("CockpitParent").position), 0);
-        Debug.Log(blockData);
         fourSideBlocks.Add(0);
         fourSideBlocks.Add(1);
     }
@@ -58,7 +60,6 @@ public class PlacementSystem : MonoBehaviour
         mousePos.z = 0;
         Vector3Int gridPos = grid.WorldToCell(mousePos);
         bool canPlace = blockData.CanPlaceBlock(gridPos);
-        Debug.Log("bonobo");
         canPlace = canPlace && NeedUpDown(gridPos);
         if (!canPlace)
             return;
@@ -66,6 +67,7 @@ public class PlacementSystem : MonoBehaviour
         blockData.AddBlock(gridPos, selectedBlockID);
         block.transform.position = grid.CellToWorld(gridPos);
         block.transform.rotation = ship.transform.rotation;
+        UpdateMinMax(gridPos);
     }
 
     public void StopPlacement()
@@ -115,6 +117,14 @@ public class PlacementSystem : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    void UpdateMinMax(Vector3Int position)
+    {
+        if (position.x < minX) minX = position.x;
+        else if (position.x > maxX) maxX = position.x;
+        if (position.y < minY) minY = position.y;
+        else if (position.y > maxY) maxY = position.y;
     }
 
     void Update()
