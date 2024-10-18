@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5520287511168911363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.075, y: 0.858, z: 0}
+  m_LocalPosition: {x: 0, y: 0.858, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -216,6 +216,12 @@ MonoBehaviour:
   moveSpeed: 6
   friction: 0.9
   eLetter: {fileID: 5520287511168911363}
+  ship: {fileID: 0}
+  shopUI: {fileID: 0}
+  shipMask:
+    serializedVersion: 2
+    m_Bits: 64
+  placementSystem: {fileID: 0}
 --- !u!61 &7937848873430558168
 BoxCollider2D:
   m_ObjectHideFlags: 0
