@@ -508,7 +508,10 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 83baf595c58b77f4684213d3d3834874, type: 2}
   ship: {fileID: 12809263}
   gridShader: {fileID: 1453097576}
-  playerResources: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!114 &440862227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,10 +912,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridShader: {fileID: 1453097578}
   player: {fileID: 1179089453}
+  ship: {fileID: 0}
   multiplier: 2
   minZoom: 1
   maxZoom: 10
   smoothTime: 0.1
+  camMode: 0
 --- !u!1 &887600840
 GameObject:
   m_ObjectHideFlags: 0
