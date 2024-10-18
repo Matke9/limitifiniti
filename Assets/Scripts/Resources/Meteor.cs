@@ -7,17 +7,29 @@ public class Meteor : MonoBehaviour
     public  ResourceTypes resourceType;
     public int size;// same as amount?
     Rigidbody2D rb;
+    Sprite[] sprites;
+    [SerializeField] SpriteRenderer sR;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SetSize();
+        SetSprite();
         SetVelocity();
     }
 
+
+
     void SetSize()
     {
-        size = Random.Range(1, 2);
-        transform.localScale = new Vector3(size, size, 0);
+        size = Random.Range(5, 10);
+        int sizeI = (int)size / 5;
+        transform.localScale = new Vector3(sizeI, sizeI, 0);
+    }
+
+    void SetSprite()
+    {
+        int spirte = Random.Range(0, sprites.Length);
+        sR.sprite = sprites[spirte];
     }
 
     void SetVelocity()
