@@ -18,7 +18,8 @@ public class PlacementSystem : MonoBehaviour
     GameObject ship;
     [SerializeField]
     GameObject gridShader;
-
+    [SerializeField]
+    PlayerResources playerResources;
     private GridData blockData;
     private List<int> fourSideBlocks = new List<int>();
 

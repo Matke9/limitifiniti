@@ -7,7 +7,7 @@ public class Meteor : MonoBehaviour
     public  ResourceTypes resourceType;
     public int size;// same as amount?
     Rigidbody2D rb;
-    Sprite[] sprites;
+    [SerializeField] Sprite[] sprites;
     [SerializeField] SpriteRenderer sR;
     private void Start()
     {

@@ -508,6 +508,7 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 83baf595c58b77f4684213d3d3834874, type: 2}
   ship: {fileID: 12809263}
   gridShader: {fileID: 1453097576}
+  playerResources: {fileID: 1364986898}
 --- !u!114 &440862227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1419,6 +1420,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5459684891b630442abe2add0522aea4, type: 3}
+--- !u!114 &1364986898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 272394754027401898, guid: 5459684891b630442abe2add0522aea4, type: 3}
+  m_PrefabInstance: {fileID: 1364986897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73cf3c2a4217cc147a03e1d463ad3360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1393783233
 GameObject:
   m_ObjectHideFlags: 0
