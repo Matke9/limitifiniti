@@ -5,11 +5,21 @@ using UnityEngine;
 public class ResourceSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] resources;
-    [SerializeField] GameObject quad;
+    [SerializeField] GameObject quad,destroyer;
 
     [SerializeField] float spawnInterval;
     [SerializeField] int spawnCount;
     MeshCollider c;
+
+    private void OnEnable()
+    {
+        InvasionTImer.OnTimesUp += DisableSpawn;
+    }
+
+    private void OnDisable()
+    {
+        InvasionTImer.OnTimesUp -= DisableSpawn;
+    }
 
     private void Start()
     {
@@ -36,5 +46,24 @@ public class ResourceSpawner : MonoBehaviour
             Instantiate(resources[k], new Vector2(screenX, screenY), Quaternion.identity);
         }
             
+    }
+
+    void DisableSpawn()
+    {
+        try { 
+            GameObject[] res = GameObject.FindGameObjectsWithTag("Resources");
+
+            foreach (GameObject go in res)
+            {
+                Destroy(go);
+            }
+        }
+        catch {
+            Debug.LogError("NEKI BUG");
+        }
+
+
+        Destroy(gameObject);
+        Destroy(destroyer);
     }
 }
