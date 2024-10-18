@@ -219,7 +219,9 @@ MonoBehaviour:
   bufferZone: 1
   strikeDelay: 2
   ranged: 1
-  bulletSpawnPoint: {fileID: 2504164012431264803}
+  bulletSpawnPoint: {fileID: 6138313900411635215}
+  bulletPrefab: {fileID: 4367804453673266805, guid: 7c7b6953566c59448903f0be0aa4a35f, type: 3}
+  bulletSpeed: 10
 --- !u!61 &5658438684065546871
 BoxCollider2D:
   m_ObjectHideFlags: 0

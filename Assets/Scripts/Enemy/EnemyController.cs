@@ -14,7 +14,9 @@ public class EnemyController : MonoBehaviour
     private Camera mainCamera;
 
     public bool ranged=false;
-    public GameObject bulletSpawnPoint;
+    public Transform bulletSpawnPoint;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10;
     private bool canShoot = false;
     private float strikeTimer = 0f;
     
@@ -71,6 +73,12 @@ public class EnemyController : MonoBehaviour
                 strikeTimer = 0f;
             }
         }
+    }
+
+    public void shoot()
+    {
+        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        bullet.GetComponent<Rigidbody2D>().velocity = bulletSpawnPoint.forward*bulletSpeed;
     }
 
 
