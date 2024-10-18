@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour
         mainCamera = Camera.main;
         canShoot = false;
         strikeTimer = 0f;
+
     }
 
     void FixedUpdate()
@@ -78,7 +79,7 @@ public class EnemyController : MonoBehaviour
     public void shoot()
     {
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().velocity = bulletSpawnPoint.forward*bulletSpeed;
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right*bulletSpeed;
     }
 
 

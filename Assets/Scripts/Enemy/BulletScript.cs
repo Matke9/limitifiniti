@@ -5,15 +5,15 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float life = 10;
-    public float demage = 1;
+    public float damage = 1;
     private void Awake()
     {
         Destroy(gameObject,life);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Skidanje Healtha i tako to
-        Destroy(gameObject);
+       //Skidanje Healtha i tako to
+       Destroy(gameObject);
     }
 }
