@@ -13,8 +13,11 @@ public class EnemyController : MonoBehaviour
     public float strikeDelay = 2f;
     private Camera mainCamera;
 
+    public bool ranged=false;
+    public GameObject bulletSpawnPoint;
     private bool canShoot = false;
     private float strikeTimer = 0f;
+    
 
     private void Start()
     {
@@ -28,7 +31,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         //Pozicija
-        Vector3 positionToFollow = mainCamera.transform.position;
+        Vector3 positionToFollow = mainCamera.transform.position;//Moze da se menja po potrebi
         float distanceToCamera = Vector2.Distance(transform.position, positionToFollow);
         Vector3 targetPosition;
 
@@ -59,13 +62,17 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        strikeTimer += Time.deltaTime;
-        if (canShoot && animator != null && strikeTimer >= strikeDelay) 
+        if(ranged)
         {
-            animator.SetTrigger("shoot");
-            Debug.Log("Can Shoot!");
-            strikeTimer = 0f;
+            strikeTimer += Time.deltaTime;
+            if (canShoot && animator != null && strikeTimer >= strikeDelay)
+            {
+                animator.SetTrigger("shoot");
+                strikeTimer = 0f;
+            }
         }
     }
+
+
 
 }
