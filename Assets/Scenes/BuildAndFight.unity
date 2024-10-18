@@ -131,6 +131,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12809264}
+  - component: {fileID: 12809266}
+  - component: {fileID: 12809265}
   m_Layer: 6
   m_Name: Spaceship
   m_TagString: Untagged
@@ -155,6 +157,76 @@ Transform:
   - {fileID: 1453097578}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!66 &12809265
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12809263}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.05
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 12809263}
+--- !u!50 &12809266
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12809263}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100000
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &177550663
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +580,10 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 83baf595c58b77f4684213d3d3834874, type: 2}
   ship: {fileID: 12809263}
   gridShader: {fileID: 1453097576}
-  playerResources: {fileID: 1364986898}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!114 &440862227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,10 +984,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridShader: {fileID: 1453097578}
   player: {fileID: 1179089453}
+  ship: {fileID: 12809264}
   multiplier: 2
   minZoom: 1
   maxZoom: 10
   smoothTime: 0.1
+  camMode: 0
 --- !u!1 &887600840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1448,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: ship
+      value: 
+      objectReference: {fileID: 12809263}
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: shopUI
+      value: 
+      objectReference: {fileID: 320844620}
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: placementSystem
+      value: 
+      objectReference: {fileID: 440862226}
+    - target: {fileID: 1169232335867409925, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: shipMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 6514476438239376763, guid: 5459684891b630442abe2add0522aea4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.94
@@ -1420,17 +1513,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5459684891b630442abe2add0522aea4, type: 3}
---- !u!114 &1364986898 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 272394754027401898, guid: 5459684891b630442abe2add0522aea4, type: 3}
-  m_PrefabInstance: {fileID: 1364986897}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cf3c2a4217cc147a03e1d463ad3360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1393783233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,9 +2645,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3016155474014527910, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6654960571593953309, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183015446955595074, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
