@@ -218,6 +218,8 @@ MonoBehaviour:
   stopThreshold: 0.1
   bufferZone: 1
   strikeDelay: 2
+  ranged: 1
+  bulletSpawnPoint: {fileID: 2504164012431264803}
 --- !u!61 &5658438684065546871
 BoxCollider2D:
   m_ObjectHideFlags: 0
