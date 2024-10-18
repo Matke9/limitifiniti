@@ -22,4 +22,14 @@ public class PlayerResources : MonoBehaviour
                 carbon += amount; break;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Resource"))
+        {
+            Meteor m = other.gameObject.GetComponent<Meteor>();
+            PickUp(m.resourceType, m.size);
+            Destroy(other.gameObject);
+        }
+    }
 }
