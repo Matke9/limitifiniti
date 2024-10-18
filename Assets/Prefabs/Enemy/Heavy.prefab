@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2466577358184645446}
   - component: {fileID: 2872775379427256032}
   - component: {fileID: 2539082692062253176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,9 +118,9 @@ GameObject:
   - component: {fileID: 2099934283700678323}
   - component: {fileID: 8525253254537046396}
   - component: {fileID: 5345337076337940078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Heavy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,8 @@ MonoBehaviour:
   strikeDelay: 2
   ranged: 0
   bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  bulletSpeed: 10
 --- !u!61 &5345337076337940078
 BoxCollider2D:
   m_ObjectHideFlags: 0

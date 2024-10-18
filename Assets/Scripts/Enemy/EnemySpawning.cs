@@ -15,7 +15,9 @@ public class EnemySpawning : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < 20; i++)
+        Physics2D.IgnoreLayerCollision(7, 8);
+        Physics2D.IgnoreLayerCollision(7, 7);
+        for (int i = 0; i < 5; i++)
         {
             SpawnEnemy();
         }
