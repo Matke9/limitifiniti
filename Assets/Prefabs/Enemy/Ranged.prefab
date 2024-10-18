@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   distanceOffset: 5
-  rotationSpeed: 5
+  rotationSpeed: 20
   stopThreshold: 0.1
   bufferZone: 1
   strikeDelay: 2
