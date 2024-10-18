@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FastWalking
+  m_Name: MeleeWalking
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1187376283, guid: eab2e8aafb8a9324e9279a018b206003, type: 3}
+      value: {fileID: -1363688444, guid: c838daabe8cf99c499f62d71c93bea49, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1187376283, guid: eab2e8aafb8a9324e9279a018b206003, type: 3}
+    - {fileID: -1363688444, guid: c838daabe8cf99c499f62d71c93bea49, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

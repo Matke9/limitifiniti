@@ -47,6 +47,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 6480525709071633324, guid: 77af28ef7e4d69741a64d6573f95921c, type: 3}
   - {fileID: 6480525709071633324, guid: 0d37a77c49817a040892b5efdaeb1c0f, type: 3}
+  - {fileID: 6480525709071633324, guid: 68826900f2d1ff143ab1d7113ccf89f1, type: 3}
+  - {fileID: 6480525709071633324, guid: 10846d9e14cfd304e83abd0c4bbeaf5f, type: 3}
   offset: 2.3
   startSpawning: 0
   spawningInterval: 3
