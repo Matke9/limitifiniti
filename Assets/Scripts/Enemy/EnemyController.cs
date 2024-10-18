@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
-    private bool canShoot = false;
+    private bool canShoot = false, canAttack = false;
     private float strikeTimer = 0f;
     
 
@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         mainCamera = Camera.main;
         canShoot = false;
+        canAttack = false;
         strikeTimer = 0f;
 
     }
@@ -65,23 +66,40 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if(ranged)
+        strikeTimer += Time.deltaTime;
+        if ((canShoot || canAttack) && animator != null && strikeTimer >= strikeDelay)
         {
-            strikeTimer += Time.deltaTime;
-            if (canShoot && animator != null && strikeTimer >= strikeDelay)
-            {
-                animator.SetTrigger("shoot");
-                strikeTimer = 0f;
-            }
+            animator.SetTrigger("attack");
+            strikeTimer = 0f;
         }
     }
 
-    public void shoot()
+    public void Attack()
     {
-        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right*bulletSpeed;
+        if (ranged)
+        {
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
+        }
+        else
+        {
+            Debug.Log("Udari!");
+        }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!ranged && collision.gameObject.CompareTag("Player"))
+        {
+            canAttack = true;
+        }
+    }
 
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (!ranged && collision.gameObject.CompareTag("Player"))
+        {
+            canAttack = false;
+        }
+    }
 }

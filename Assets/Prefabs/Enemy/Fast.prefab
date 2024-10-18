@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2466577358184645446}
   - component: {fileID: 2872775379427256032}
   - component: {fileID: 2539082692062253176}
+  - component: {fileID: 8041125952630788290}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -106,6 +107,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8041125952630788290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162033940597234652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fea013763598384ea4d5a2634c0686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6480525709071633324
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +198,7 @@ MonoBehaviour:
   rotationSpeed: 10
   stopThreshold: 0.1
   bufferZone: 1
-  strikeDelay: 2
+  strikeDelay: 0.7
   ranged: 0
   bulletSpawnPoint: {fileID: 0}
   bulletPrefab: {fileID: 0}

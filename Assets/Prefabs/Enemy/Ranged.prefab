@@ -230,7 +230,7 @@ MonoBehaviour:
   rotationSpeed: 20
   stopThreshold: 0.1
   bufferZone: 1
-  strikeDelay: 2
+  strikeDelay: 1.8
   ranged: 1
   bulletSpawnPoint: {fileID: 6138313900411635215}
   bulletPrefab: {fileID: 4367804453673266805, guid: 7c7b6953566c59448903f0be0aa4a35f, type: 3}

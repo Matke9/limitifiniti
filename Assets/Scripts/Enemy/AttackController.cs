@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletController : MonoBehaviour
+public class AttackController : MonoBehaviour
 {
     EnemyController enemyController;
+
     void Start()
     {
         enemyController = GetComponentInParent<EnemyController>();
     }
-    public void shoot()
+
+    public void Attack()
     {
-        enemyController.shoot();
+        enemyController.Attack();
     }
 
 }
