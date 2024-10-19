@@ -139,11 +139,8 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 8003b39e606251740a726b5e63348246, type: 3}
   - {fileID: 21300000, guid: f75b0a2a8ae69f34295a3ba396258edc, type: 3}
-  - {fileID: 21300000, guid: 5d1236431d225564fad765a8a12beaa2, type: 3}
-  - {fileID: 21300000, guid: 3438aeac802553149a902ef220111982, type: 3}
   - {fileID: 21300000, guid: 6f8d47c4656859446a1cec01ec7851af, type: 3}
   - {fileID: 21300000, guid: e62bcc2c20810bc4098dd6c2eed756e6, type: 3}
-  - {fileID: 21300000, guid: 3b6b54eb47de3ad4cb22e82bff6ca6d4, type: 3}
   sR: {fileID: 8423536648389200373}
 --- !u!50 &-7106182341751248490
 Rigidbody2D:

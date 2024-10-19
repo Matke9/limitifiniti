@@ -15,7 +15,9 @@ public class InvasionTImer : MonoBehaviour
     void Start()
     {
         timeInS = (int)timer * 60;
-        time.text = (timeInS / 60) + " : " + (timeInS % 60);
+        string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : ""); //mozda ce moci da se menja tajmer u zavisnosti od toga koliko bi da igras
+        string zeroAfter = timeInS % 60 < 10 ? "0" : ""; //ako je jednocifreno da ima nulu
+        time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
         StartCoroutine(Timer());
     }
 
@@ -25,7 +27,7 @@ public class InvasionTImer : MonoBehaviour
         --timeInS;
 
 
-        if (timeInS <=0)
+        if (timeInS <= 0)
         {
             OnTimesUp?.Invoke();
             StartCoroutine(SurviveTimer());
@@ -33,10 +35,12 @@ public class InvasionTImer : MonoBehaviour
         }
         else
         {
-            time.text = (timeInS / 60) + " : " + (timeInS % 60);
+            string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : "");
+            string zeroAfter = timeInS % 60 < 10 ? "0" : "";
+            time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
             StartCoroutine(Timer());
         }
-       
+
     }
 
 
@@ -45,7 +49,9 @@ public class InvasionTImer : MonoBehaviour
         yield return new WaitForSeconds(1);
         timeInS++;
 
-        time.text = (timeInS / 60) + " : " + (timeInS % 60);
+        string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : "");
+        string zeroAfter = timeInS % 60 < 10 ? "0" : "";
+        time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
         StartCoroutine(Timer());
 
     }
