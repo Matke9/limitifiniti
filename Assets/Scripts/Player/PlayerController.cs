@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
             camControler.camMode = CameraController.CamMode.Build;
             spriteRenderer.enabled = false;
             transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
             collider.enabled = false;
             shopUI.SetActive(true);
         }
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.enabled = true;
             shopUI.SetActive(false);
             transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
