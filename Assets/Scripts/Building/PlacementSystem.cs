@@ -18,7 +18,8 @@ public class PlacementSystem : MonoBehaviour
     GameObject ship;
     [SerializeField]
     GameObject gridShader;
-
+    [SerializeField]
+    PlayerResources playerRes;
     [HideInInspector]
     public int minX = 0, maxX = 0, minY = 0, maxY = 0;
 
@@ -63,6 +64,15 @@ public class PlacementSystem : MonoBehaviour
         canPlace = canPlace && NeedUpDown(gridPos);
         if (!canPlace)
             return;
+        Vector3Int price = database.blocksData[selectedBlockID].price;
+        if (!playerRes.CanBuy(price))
+        {
+            Debug.Log("Not enough resources");
+            return;
+        }
+        playerRes.cobalt -= price.x;
+        playerRes.silicates -= price.y;
+        playerRes.carbon -= price.z;
         GameObject block = Instantiate(database.blocksData[selectedBlockID].Prefab, grid.transform);
         blockData.AddBlock(gridPos, selectedBlockID);
         block.transform.position = grid.CellToWorld(gridPos);
@@ -78,6 +88,8 @@ public class PlacementSystem : MonoBehaviour
         inputManager.OnClicked -= PlaceBlock;
         inputManager.OnExit -= StopPlacement;
     }
+
+
 
     bool NeedUpDown(Vector3Int gridPos)
     {

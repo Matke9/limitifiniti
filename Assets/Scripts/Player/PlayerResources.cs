@@ -13,7 +13,7 @@ public class PlayerResources : MonoBehaviour
         switch (resource)
         {
             case ResourceTypes.Cobalt:
-                cobalt += amount;break;
+                cobalt += amount; break;
 
             case ResourceTypes.Silicates:
                 silicates += amount; break;
@@ -31,5 +31,12 @@ public class PlayerResources : MonoBehaviour
             PickUp(m.resourceType, m.size);
             Destroy(other.gameObject);
         }
+    }
+
+    public bool CanBuy(Vector3Int price)
+    {
+        if (cobalt < price.x || silicates < price.y || carbon < price.z)
+            return false;
+        return true;
     }
 }
