@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         zoomTarget = camera.orthographicSize;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (camMode == CamMode.Build)
         {
@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
         {
             Vector3 camPos = player.position;
             camPos.z = -10;
-            camera.transform.position = camPos;
+            camera.transform.position = Vector3.Lerp(camera.transform.position, camPos, 10f * Time.deltaTime);
             camera.orthographicSize = 5;
             int gridSize = Mathf.RoundToInt(camera.orthographicSize) * 4 + 1;
             gridShader.localScale = new Vector3(gridSize, gridSize, 1);
