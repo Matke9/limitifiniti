@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
         ship.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (camMode == CamMode.Build)
         {
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
         {
             Vector3 camPos = player.position;
             camPos.z = -10;
-            mainCamera.transform.position = camPos;
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, camPos, 10f * Time.deltaTime); ;
             mainCamera.orthographicSize = 5;
             int gridSize = Mathf.RoundToInt(mainCamera.orthographicSize) * 4 + 1;
             gridShader.localScale = new Vector3(gridSize, gridSize, 1);

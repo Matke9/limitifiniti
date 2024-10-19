@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2099934283700678323}
   - component: {fileID: 8525253254537046396}
   - component: {fileID: 5658438684065546871}
+  - component: {fileID: 8072948990942663163}
   m_Layer: 8
   m_Name: Ranged
   m_TagString: Enemy
@@ -228,6 +229,7 @@ MonoBehaviour:
   moveSpeed: 20
   distanceOffset: 5
   rotationSpeed: 20
+  damage: 1
   stopThreshold: 0.1
   bufferZone: 1
   strikeDelay: 1.8
@@ -280,3 +282,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5345841, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8072948990942663163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480525709071633324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25178abf75480e84a92c2926eae41e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
