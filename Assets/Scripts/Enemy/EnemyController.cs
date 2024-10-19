@@ -74,7 +74,6 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetTrigger("attack");
             strikeTimer = 0f;
-            isAttacking = false;
         }
     }
 
@@ -88,27 +87,20 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            isAttacking=true;
-        }
-    }
-
-    private bool isAttacking;
-    private void OnCollisionStay(Collision collision)
-    {
-        if (!ranged && collision.gameObject.CompareTag("Player") && isAttacking)
-        {
             try
             {
-                collision.transform.GetComponent<Health>().TakeDamage(damage);
+                coll.transform.GetComponent<Health>().TakeDamage(damage);
             }
             catch { }
         }
     }
 
+    private Collision2D coll;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(!ranged && collision.gameObject.CompareTag("Player"))
         {
+            coll = collision;
             canAttack = true;
         }
     }

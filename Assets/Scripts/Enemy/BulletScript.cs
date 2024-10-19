@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
        //Skidanje Healtha i tako to
-       if(collision.transform.tag=="Brod ili sta vec")
+       if(collision.transform.tag=="Player")
        {
             try
             {
