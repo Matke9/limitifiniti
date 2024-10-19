@@ -90,9 +90,9 @@ public class PlayerController : MonoBehaviour
          ym = playerGridPos.y + placementSystem.minY,
          yp = playerGridPos.y - placementSystem.maxX;
 
-        if (math.min(xm, xp) < math.min(ym, yp))
+        if (math.max(xm, xp) > math.max(ym, yp))
         {
-            if (xm < xp)
+            if (xm > xp)
             {
                 newPos.x = placementSystem.minX - 1;
             }
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (ym < yp)
+            if (ym > yp)
             {
                 newPos.y = placementSystem.minY - 1;
             }
