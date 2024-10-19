@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResourceSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] resources;
-    [SerializeField] GameObject quad,destroyer;
+    [SerializeField] GameObject quad, destroyer;
 
     [SerializeField] float spawnInterval;
     [SerializeField] int spawnCount;
@@ -45,21 +45,23 @@ public class ResourceSpawner : MonoBehaviour
             int k = Random.Range(0, resources.Length);
             Instantiate(resources[k], new Vector2(screenX, screenY), Quaternion.identity);
         }
-            
+
     }
 
     void DisableSpawn()
     {
-        try { 
-            GameObject[] res = GameObject.FindGameObjectsWithTag("Resources");
+        try
+        {
+            GameObject[] res = GameObject.FindGameObjectsWithTag("Resource");
 
             foreach (GameObject go in res)
             {
                 Destroy(go);
             }
         }
-        catch {
-            Debug.LogError("NEKI BUG");
+        catch
+        {
+            Debug.LogError($"NEKI BUG {GameObject.FindGameObjectsWithTag("Resource")}");
         }
 
 

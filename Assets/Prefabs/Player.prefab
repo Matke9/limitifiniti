@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1169232335867409925}
   - component: {fileID: 7937848873430558168}
   - component: {fileID: 272394754027401898}
-  - component: {fileID: 6687157953814710724}
+  - component: {fileID: 4814447749006014253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -265,7 +265,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8875741, y: 0.8782054}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &272394754027401898
 MonoBehaviour:
@@ -282,8 +282,8 @@ MonoBehaviour:
   cobalt: 0
   silicates: 0
   carbon: 0
---- !u!70 &6687157953814710724
-CapsuleCollider2D:
+--- !u!58 &4814447749006014253
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -315,5 +315,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.15, y: 1.35}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 1.25

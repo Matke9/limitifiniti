@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             camControler.camMode = CameraController.CamMode.Build;
             spriteRenderer.enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
             collider.enabled = false;
             shopUI.SetActive(true);
         }
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
             transform.position = MovePlayerOutOfShip(transform.position);
             spriteRenderer.enabled = true;
             shopUI.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
@@ -100,8 +102,16 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Move the player based on the calculated velocity
-        velocity = velocity * friction + moveInput * moveSpeed * (1 - friction);
-        rb.velocity = velocity;
+        if (camControler.camMode == CameraController.CamMode.Player)
+        {
+            velocity = velocity * friction + moveInput * moveSpeed * (1 - friction);
+            rb.velocity = velocity;
+        }
+        else
+        {
+            velocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -121,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateTriggerState(Collider2D collision, bool state)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6 && camControler.camMode == CameraController.CamMode.Player)
         {
             eLetter.SetActive(state);
             canClickE = state;

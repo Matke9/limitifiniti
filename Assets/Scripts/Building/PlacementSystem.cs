@@ -48,6 +48,7 @@ public class PlacementSystem : MonoBehaviour
         gridShader.SetActive(true);
         inputManager.OnClicked += PlaceBlock;
         inputManager.OnExit += StopPlacement;
+        Debug.Log("moze");
     }
 
     private void PlaceBlock()
