@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class InvasionTImer : MonoBehaviour
+public class InvasionTimer : MonoBehaviour
 {
     [Header("In minutes")]
     [SerializeField] float timer = 5;

@@ -5,22 +5,24 @@ using TMPro;
 public class UIResources : MonoBehaviour
 {
     [SerializeField] GameObject buildUI;
+    [SerializeField] GameObject gridShader;
     [SerializeField] TextMeshProUGUI cobT, silT, carT;
     [SerializeField] PlayerResources resources;
     private void OnEnable()
     {
-        InvasionTImer.OnTimesUp += DisableUI;
+        InvasionTimer.OnTimesUp += DisableUI;
     }
 
     private void OnDisable()
     {
-        InvasionTImer.OnTimesUp -= DisableUI;
+        InvasionTimer.OnTimesUp -= DisableUI;
     }
 
 
     void DisableUI()
     {
         buildUI.SetActive(false);
+        gridShader.SetActive(false);
     }
 
     private void FixedUpdate()
