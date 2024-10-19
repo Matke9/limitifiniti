@@ -8,6 +8,9 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 4f;
     public float distanceOffset = 5f;
     public float rotationSpeed = 5f;
+    public int damage = 1;
+
+
     public float stopThreshold = 0.1f;
     public float bufferZone = 1f;
     public float strikeDelay = 2f;
@@ -71,6 +74,7 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetTrigger("attack");
             strikeTimer = 0f;
+            isAttacking = false;
         }
     }
 
@@ -79,11 +83,25 @@ public class EnemyController : MonoBehaviour
         if (ranged)
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.GetComponent<BulletScript>().damage = damage;
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
         }
         else
         {
-            Debug.Log("Udari!");
+            isAttacking=true;
+        }
+    }
+
+    private bool isAttacking;
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!ranged && collision.gameObject.CompareTag("Player") && isAttacking)
+        {
+            try
+            {
+                collision.transform.GetComponent<Health>().TakeDamage(damage);
+            }
+            catch { }
         }
     }
 

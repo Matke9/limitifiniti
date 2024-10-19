@@ -15,12 +15,12 @@ public class EnemySpawning : MonoBehaviour
 
     private void Start()
     {
-        Physics2D.IgnoreLayerCollision(7, 8);
+    /*    Physics2D.IgnoreLayerCollision(7, 8);
         Physics2D.IgnoreLayerCollision(7, 7);
         for (int i = 0; i < 5; i++)
         {
             SpawnEnemy();
-        }
+        }*/
     }
 
     public void SpawnEnemy()
