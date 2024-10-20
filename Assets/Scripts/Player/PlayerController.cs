@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     CameraController camControler;
     SpriteRenderer spriteRenderer;
-    Collider2D collider;
+    Collider2D pCollider;
 
     [SerializeField]
     GameObject ship; //da postane dynamic rigidbody kad istekne tajmer
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         canClickE = false;
         camControler = Camera.main.GetComponent<CameraController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        collider = GetComponent<Collider2D>();
+        pCollider = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -47,26 +47,37 @@ public class PlayerController : MonoBehaviour
         if (canClickE && Input.GetKeyDown(KeyCode.E))
         {
             camControler.camMode = CameraController.CamMode.Build;
-            spriteRenderer.enabled = false;
-            foreach (Transform t in transform)
-            {
-                t.gameObject.SetActive(false);
-            }
-            collider.enabled = false;
-            shopUI.SetActive(true);
+            DisablePlayer();
         }
         if (Input.GetKeyDown(KeyCode.Escape) && camControler.camMode == CameraController.CamMode.Build)
         {
             camControler.camMode = CameraController.CamMode.Player;
-            collider.enabled = true;
+            pCollider.enabled = true;
             transform.position = MovePlayerOutOfShip(transform.position);
             spriteRenderer.enabled = true;
             shopUI.SetActive(false);
-            foreach (Transform t in transform)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                t.gameObject.SetActive(true);
+                transform.GetChild(i).gameObject.SetActive(true);
             }
         }
+        if (camControler.camMode == CameraController.CamMode.Combat)
+        {
+            DisablePlayer();
+            shopUI.SetActive(false);
+        }
+    }
+
+    private void DisablePlayer()
+    {
+        spriteRenderer.enabled = false;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        pCollider.enabled = false;
+        shopUI.SetActive(true);
+        canClickE = false;
     }
 
     private Vector3 MovePlayerOutOfShip(Vector3 position)
@@ -79,9 +90,9 @@ public class PlayerController : MonoBehaviour
          ym = playerGridPos.y + placementSystem.minY,
          yp = playerGridPos.y - placementSystem.maxX;
 
-        if (math.min(xm, xp) < math.min(ym, yp))
+        if (math.max(xm, xp) > math.max(ym, yp))
         {
-            if (xm < xp)
+            if (xm > xp)
             {
                 newPos.x = placementSystem.minX - 1;
             }
@@ -92,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (ym < yp)
+            if (ym > yp)
             {
                 newPos.y = placementSystem.minY - 1;
             }
@@ -116,7 +127,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             velocity = Vector3.zero;
-            rb.velocity = Vector3.zero;
+            rb.velocity = velocity;
         }
     }
 

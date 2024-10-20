@@ -13,12 +13,13 @@ public class ResourceSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        InvasionTImer.OnTimesUp += DisableSpawn;
+        InvasionTimer.OnTimesUp += DisableSpawn;
+
     }
 
     private void OnDisable()
     {
-        InvasionTImer.OnTimesUp -= DisableSpawn;
+        InvasionTimer.OnTimesUp -= DisableSpawn;
     }
 
     private void Start()

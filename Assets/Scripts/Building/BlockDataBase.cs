@@ -22,4 +22,6 @@ public class BlockData
     public bool needTop { get; private set; }
     [field: SerializeField]
     public bool needBottom { get; private set; }
+    [field: SerializeField]
+    public Vector3Int price { get; private set; }
 }

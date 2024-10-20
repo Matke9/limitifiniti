@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 12809264}
   - component: {fileID: 12809266}
   - component: {fileID: 12809265}
+  - component: {fileID: 12809267}
   m_Layer: 6
   m_Name: Spaceship
   m_TagString: Untagged
@@ -227,6 +228,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &12809267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12809263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa701f15ddd1a074e82c7e6e0635e9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  friction: 0.9
 --- !u!1 &121536409
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildUI: {fileID: 654211119}
+  gridShader: {fileID: 1453097576}
   cobT: {fileID: 2140290605}
   silT: {fileID: 280553743}
   carT: {fileID: 586936464}
@@ -1631,6 +1647,7 @@ MonoBehaviour:
   minZoom: 1
   maxZoom: 10
   smoothTime: 0.1
+  pS: {fileID: 440862226}
   camMode: 0
 --- !u!1 &989104579
 GameObject:
@@ -1898,7 +1915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5 : 00'
+  m_text: '05 : 00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f88c1694c3851a54caf469ee53d0c52a, type: 2}
   m_sharedMaterial: {fileID: -2794183317373475974, guid: f88c1694c3851a54caf469ee53d0c52a, type: 2}
@@ -2499,6 +2516,10 @@ PrefabInstance:
       propertyPath: shipMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 3317922027962566516, guid: 5459684891b630442abe2add0522aea4, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 12809264}
     - target: {fileID: 6514476438239376763, guid: 5459684891b630442abe2add0522aea4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.94
