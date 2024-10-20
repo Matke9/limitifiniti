@@ -547,6 +547,7 @@ MonoBehaviour:
   timer: 1
   time: {fileID: 1030462582}
   scoreText: {fileID: 636931549}
+  endScreen: {fileID: 0}
 --- !u!1 &280553741
 GameObject:
   m_ObjectHideFlags: 0
