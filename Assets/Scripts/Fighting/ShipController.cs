@@ -40,7 +40,7 @@ public class ShipController : MonoBehaviour
             rb.velocity = velocity;
 
             rotationSpeed = rotationSpeed * friction + steerInput * moveSpeed * (1 - friction);
-            rb.rotation -= rotationSpeed;
+            rb.rotation -= rotationSpeed / 2;
         }
     }
 }
