@@ -24,7 +24,7 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 1774461322485398431, guid: 9a630072a3933394e9dcdeee72fa4d65, type: 3}
     <needTop>k__BackingField: 0
     <needBottom>k__BackingField: 0
-    <price>k__BackingField: {x: 3, y: 0, z: 0}
+    <price>k__BackingField: {x: 2, y: 0, z: 0}
   - <Name>k__BackingField: Thruster
     <ID>k__BackingField: 2
     <Prefab>k__BackingField: {fileID: 5583820124081178672, guid: 155cb76c6398fd340b6987ae87e7e083, type: 3}
