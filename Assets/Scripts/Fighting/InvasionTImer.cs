@@ -52,7 +52,7 @@ public class InvasionTimer : MonoBehaviour
         string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : "");
         string zeroAfter = timeInS % 60 < 10 ? "0" : "";
         time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
-        StartCoroutine(Timer());
+        StartCoroutine(SurviveTimer());
 
     }
 
