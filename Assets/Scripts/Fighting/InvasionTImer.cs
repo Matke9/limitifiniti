@@ -12,6 +12,7 @@ public class InvasionTimer : MonoBehaviour
     [SerializeField] float timer = 5;
     [SerializeField] TextMeshProUGUI time;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] GameObject endScreen;
     int timeInS;
 
     public static event Action OnTimesUp;
@@ -59,6 +60,12 @@ public class InvasionTimer : MonoBehaviour
         time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
         StartCoroutine(SurviveTimer());
 
+    }
+
+    void EndScreen()
+    {
+        scoreText.gameObject.SetActive(false);
+        endScreen.SetActive(true);
     }
 
 }
