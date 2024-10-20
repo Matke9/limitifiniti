@@ -6,9 +6,12 @@ using System;
 
 public class InvasionTimer : MonoBehaviour
 {
+    public static int score = 0;
+
     [Header("In minutes")]
     [SerializeField] float timer = 5;
     [SerializeField] TextMeshProUGUI time;
+    [SerializeField] TextMeshProUGUI scoreText;
     int timeInS;
 
     public static event Action OnTimesUp;
@@ -38,6 +41,7 @@ public class InvasionTimer : MonoBehaviour
             string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : "");
             string zeroAfter = timeInS % 60 < 10 ? "0" : "";
             time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
+            scoreText.gameObject.SetActive(true);
             StartCoroutine(Timer());
         }
 
@@ -48,7 +52,8 @@ public class InvasionTimer : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         timeInS++;
-
+        score += 5;
+        scoreText.text = "Score: " + score;
         string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : "");
         string zeroAfter = timeInS % 60 < 10 ? "0" : "";
         time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
