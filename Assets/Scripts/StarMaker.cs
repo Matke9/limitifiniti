@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StarMaker : MonoBehaviour
 {
-    public GameObject starPrefab;           // Star prefab to spawn
+    public List<GameObject> starPrefabs=new List<GameObject>();           // Star prefab to spawn
     public int starsPerCell = 10;           // Number of stars to spawn in each grid cell
     public float spawnRadius = 50f;         // Radius around player for star spawning
     public float gridCellSize = 100f;       // Size of the grid cells
@@ -52,7 +52,7 @@ public class StarMaker : MonoBehaviour
             // Ensure the stars don't spawn too close to one another
             if (!IsPositionTooClose(randomPos))
             {
-                var star = Instantiate(starPrefab, randomPos, Quaternion.identity);
+                var star = Instantiate(starPrefabs[Random.Range(0,starPrefabs.Count)], randomPos, Quaternion.identity);
                 star.transform.parent = transform;
                 spawnedPositions.Add(randomPos);
             }

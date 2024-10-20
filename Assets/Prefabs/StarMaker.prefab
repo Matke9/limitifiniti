@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0619d4962c42c644ba8e94ac3606c088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starPrefab: {fileID: 88610513571745112, guid: 773fe52e1663e014db2c9301fcaacc76, type: 3}
+  starPrefabs:
+  - {fileID: 88610513571745112, guid: 773fe52e1663e014db2c9301fcaacc76, type: 3}
   starsPerCell: 100
   spawnRadius: 15
   gridCellSize: 10
