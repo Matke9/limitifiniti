@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 440862226}
   m_Layer: 0
   m_Name: BuildingSystem
-  m_TagString: Untagged
+  m_TagString: BuildingSys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -843,6 +843,7 @@ MonoBehaviour:
   inputManager: {fileID: 440862227}
   database: {fileID: 11400000, guid: 83baf595c58b77f4684213d3d3834874, type: 2}
   ship: {fileID: 12809263}
+  shipController: {fileID: 0}
   gridShader: {fileID: 1453097576}
   playerRes: {fileID: 1364986898}
   minX: 0

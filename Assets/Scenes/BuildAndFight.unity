@@ -843,6 +843,7 @@ MonoBehaviour:
   inputManager: {fileID: 440862227}
   database: {fileID: 11400000, guid: 83baf595c58b77f4684213d3d3834874, type: 2}
   ship: {fileID: 12809263}
+  shipController: {fileID: 0}
   gridShader: {fileID: 1453097576}
   playerRes: {fileID: 1364986898}
   minX: 0
@@ -1576,7 +1577,7 @@ MonoBehaviour:
   gridShader: {fileID: 1453097578}
   player: {fileID: 1179089453}
   ship: {fileID: 12809264}
-  multiplier: 2
+  multiplier: 3
   minZoom: 1
   maxZoom: 10
   smoothTime: 0.1
@@ -3397,22 +3398,6 @@ PrefabInstance:
     - target: {fileID: 3016155474014527910, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
       propertyPath: m_Name
       value: CockpitParent
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016155474014527910, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016155474014527910, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654960571593953309, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9183015446955595074, guid: c416f441c49eb204c8edffa1c5bc962f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
