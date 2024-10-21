@@ -14,10 +14,12 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Skidanje Healtha i tako to
+        Debug.Log("Giga");
         if (collision.transform.tag == "ShipPart")
         {
             try
             {
+                Debug.Log("nigga");
                 collision.transform.GetComponent<Health>().TakeDamage(damage);
             }
             catch { }

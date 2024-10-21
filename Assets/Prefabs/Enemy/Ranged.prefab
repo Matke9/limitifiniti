@@ -229,7 +229,7 @@ MonoBehaviour:
   moveSpeed: 20
   distanceOffset: 5
   rotationSpeed: 20
-  damage: 1
+  damage: 3
   stopThreshold: 0.1
   bufferZone: 1
   strikeDelay: 1.8

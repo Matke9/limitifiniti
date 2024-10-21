@@ -15,14 +15,17 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        if (transform.tag == "Enemy")
+        if (currentHealth <= 0)
         {
-            Destroy(gameObject);
-        } 
-        if (transform.tag == "ShipPart")
-        {
-            buildSys.shipController.moveSpeed = buildSys.shipController.speedMultiplier * buildSys.blockData.GetThrusterRatio();
-            Destroy(gameObject);
+            if (transform.tag == "Enemy")
+            {
+                Destroy(gameObject);
+            }
+            if (transform.tag == "ShipPart")
+            {
+                buildSys.shipController.moveSpeed = buildSys.shipController.speedMultiplier * buildSys.blockData.GetThrusterRatio();
+                Destroy(gameObject);
+            }
         }
     }
 }
