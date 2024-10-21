@@ -17,7 +17,7 @@ public class StarMaker : MonoBehaviour
     void Start()
     {
         // Find the player
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = Camera.main.transform;
 
         // Initialize sets
         visitedCells = new HashSet<Vector2Int>();
