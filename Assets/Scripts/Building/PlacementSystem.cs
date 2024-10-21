@@ -32,11 +32,11 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
         blockData = new();
         blockData.AddBlock(grid.WorldToCell(grid.transform.Find("CockpitParent").position), 0);
+        shipController = ship.GetComponent<ShipController>();
         shipController.moveSpeed = shipController.speedMultiplier * blockData.GetThrusterRatio();
 
         fourSideBlocks.Add(0);
         fourSideBlocks.Add(1);
-        shipController = ship.GetComponent<ShipController>();
     }
 
     public void StartPlacement(int ID)
