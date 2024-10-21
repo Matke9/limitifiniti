@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 440862226}
   m_Layer: 0
   m_Name: BuildingSystem
-  m_TagString: Untagged
+  m_TagString: BuildingSys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
