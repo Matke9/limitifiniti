@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     PlacementSystem buildSys;
     void Start()
     {
-        buildSys = GameObject.FindGameObjectWithTag("BuildSys").transform.GetComponent<PlacementSystem>();
+        buildSys = GameObject.FindGameObjectWithTag("BuildingSys").transform.GetComponent<PlacementSystem>();
         currentHealth = maxHealth;
     }
     public void TakeDamage(int damage)
