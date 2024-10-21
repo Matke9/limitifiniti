@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 8101301514622072921}
   - component: {fileID: 171612440383881504}
   - component: {fileID: 7510260934753931497}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 70391759154364676}
   - component: {fileID: 8920521572156539794}
   - component: {fileID: 1122717832390368252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Destroyer
   m_TagString: Destroyer
   m_Icon: {fileID: 0}

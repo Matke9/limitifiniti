@@ -25,4 +25,16 @@ public class GridData
         }
         return true;
     }
+
+    public float GetThrusterRatio()
+    {
+        float thrusterCount = 0;
+        foreach (Vector3Int key in placedBlocks.Keys)
+        {
+            if (placedBlocks[key] == 2)
+                thrusterCount++;
+        }
+        Debug.Log(thrusterCount + " " + placedBlocks.Count);
+        return thrusterCount / (float)placedBlocks.Count;
+    }
 }

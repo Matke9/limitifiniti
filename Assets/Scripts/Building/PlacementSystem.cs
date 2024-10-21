@@ -16,6 +16,7 @@ public class PlacementSystem : MonoBehaviour
     int selectedBlockID = -1;
     [SerializeField]
     GameObject ship;
+    ShipController shipController;
     [SerializeField]
     GameObject gridShader;
     [SerializeField]
@@ -33,6 +34,7 @@ public class PlacementSystem : MonoBehaviour
         blockData.AddBlock(grid.WorldToCell(grid.transform.Find("CockpitParent").position), 0);
         fourSideBlocks.Add(0);
         fourSideBlocks.Add(1);
+        shipController = ship.GetComponent<ShipController>();
     }
 
     public void StartPlacement(int ID)
@@ -78,6 +80,7 @@ public class PlacementSystem : MonoBehaviour
         block.transform.position = grid.CellToWorld(gridPos);
         block.transform.rotation = ship.transform.rotation;
         UpdateMinMax(gridPos);
+        shipController.moveSpeed = shipController.speedMultiplier * blockData.GetThrusterRatio();
     }
 
     public void StopPlacement()

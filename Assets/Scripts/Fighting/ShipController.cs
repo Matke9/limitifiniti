@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // The maximum speed of the player
+    public float speedMultiplier = 10f;
+    public float moveSpeed = 0f; // The maximum speed of the player
     public float friction = 0.9f; // The friction factor (0.9 means 90% of speed retained per frame)
 
     private Rigidbody2D rb;
@@ -40,7 +41,7 @@ public class ShipController : MonoBehaviour
             rb.velocity = velocity;
 
             rotationSpeed = rotationSpeed * friction + steerInput * moveSpeed * (1 - friction);
-            rb.rotation -= rotationSpeed / 2;
+            rb.rotation -= rotationSpeed / 5;
         }
     }
 }

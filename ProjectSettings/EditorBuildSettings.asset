@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildAndFight.unity
     guid: ff608b9b9fdc77547a8b280913e1daf5
+  - enabled: 1
+    path: Assets/Scenes/Alek.unity
+    guid: 5034717d7351bc04680311824200c939
+  - enabled: 1
+    path: Assets/Scenes/Stefan.unity
+    guid: c9f92fee359be3c43af091e5221672c9
   m_configObjects: {}

@@ -36,13 +36,13 @@ public class InvasionTimer : MonoBehaviour
             OnTimesUp?.Invoke();
             StartCoroutine(SurviveTimer());
             time.color = Color.red;
+            scoreText.gameObject.SetActive(true);
         }
         else
         {
             string zeroBefore = (timer < 10 ? "0" : "") + (timer < 1 ? "0" : "");
             string zeroAfter = timeInS % 60 < 10 ? "0" : "";
             time.text = zeroBefore + (timeInS / 60) + " : " + zeroAfter + (timeInS % 60);
-            scoreText.gameObject.SetActive(true);
             StartCoroutine(Timer());
         }
 
