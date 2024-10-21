@@ -76,7 +76,7 @@ public class CameraController : MonoBehaviour
         {
             Vector3 camPos;
             camPos = pS.grid.CellToWorld(new Vector3Int((pS.minX + pS.maxX) / 2, (pS.minY + pS.maxY) / 2, 0));
-            camPos += new Vector3((pS.maxX - pS.minX) % 2 == 0 ? 1 : .5f, (pS.maxY - pS.minY) % 2 == 0 ? 1 : .5f, 0);
+            // camPos += new Vector3((pS.maxX - pS.minX) % 2 == 0 ? 1 : .5f, (pS.maxY - pS.minY) % 2 == 0 ? 1 : .5f, 0);
             camPos.z = -10;
             transform.position = camPos;
             float camSize = Mathf.Clamp(math.max(pS.maxX - pS.minX, pS.maxY - pS.minY) * 2f, minZoom, maxZoom);

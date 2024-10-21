@@ -17,8 +17,8 @@ public class StarMaker : MonoBehaviour
     void Start()
     {
         // Find the player
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        player = Camera.main.transform;
+        spawnRadius*=Camera.main.orthographicSize;
         // Initialize sets
         visitedCells = new HashSet<Vector2Int>();
         spawnedPositions = new List<Vector2>();

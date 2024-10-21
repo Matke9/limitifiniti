@@ -52,7 +52,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && camControler.camMode == CameraController.CamMode.Build)
         {
             camControler.camMode = CameraController.CamMode.Player;
-            pCollider.enabled = true;
+            foreach (Collider2D coll in GetComponents<Collider2D>())
+            {
+                coll.enabled = true;
+            }
             transform.position = MovePlayerOutOfShip(transform.position);
             spriteRenderer.enabled = true;
             shopUI.SetActive(false);
@@ -60,11 +63,6 @@ public class PlayerController : MonoBehaviour
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
-        }
-        if (camControler.camMode == CameraController.CamMode.Combat)
-        {
-            DisablePlayer();
-            shopUI.SetActive(false);
         }
     }
 
@@ -75,7 +73,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
-        pCollider.enabled = false;
+        foreach (Collider2D coll in GetComponents<Collider2D>())
+        {
+            coll.enabled = false;
+        }
         shopUI.SetActive(true);
         canClickE = false;
     }
@@ -148,10 +149,27 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateTriggerState(Collider2D collision, bool state)
     {
-        if (collision.gameObject.layer == 6 && camControler.camMode == CameraController.CamMode.Player)
+        if (collision.gameObject.layer == 12 && camControler.camMode == CameraController.CamMode.Player)
         {
             eLetter.SetActive(state);
             canClickE = state;
         }
+    }
+
+    private void OnEnable()
+    {
+        InvasionTimer.OnTimesUp += StartCombat;
+    }
+
+    private void OnDisable()
+    {
+        InvasionTimer.OnTimesUp -= StartCombat;
+    }
+
+    void StartCombat()
+    {
+        DisablePlayer();
+        shopUI.SetActive(false);
+        placementSystem.StopPlacement();
     }
 }

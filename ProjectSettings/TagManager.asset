@@ -8,6 +8,7 @@ TagManager:
   - Resource
   - Destroyer
   - Enemy
+  - BuildingSys
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - Bullet
   - Enemy
   - Post Processing
-  - 
-  - 
-  - 
+  - ResourceSpawnAndDestroy
+  - PlayerBullet
+  - ShipPart
   - 
   - 
   - 

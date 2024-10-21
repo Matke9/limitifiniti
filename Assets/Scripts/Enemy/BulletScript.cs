@@ -8,20 +8,30 @@ public class BulletScript : MonoBehaviour
     public int damage = 1;
     private void Awake()
     {
-        Destroy(gameObject,life);
+        Destroy(gameObject, life);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       //Skidanje Healtha i tako to
-       if(collision.transform.tag=="Player")
-       {
-            try
+        // Skidanje Healtha i tako to
+        Debug.Log(collision.gameObject);
+
+        // Loop through all contact points
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            // Get the exact object hit by the bullet
+            Collider2D hitCollider = contact.collider;
+            if (hitCollider != null && hitCollider.CompareTag("ShipPart"))
             {
-                collision.transform.GetComponent<Health>().TakeDamage(damage);
+                // If the collider belongs to a ShipPart, apply damage
+                Health shipPartHealth = hitCollider.GetComponent<Health>();
+                if (shipPartHealth != null)
+                {
+                    shipPartHealth.TakeDamage(damage);
+                }
             }
-            catch{}
-       }
-       Destroy(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }

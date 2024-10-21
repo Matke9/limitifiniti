@@ -95,19 +95,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private Collision2D coll;
-    private void OnCollisionEnter2D(Collision2D collision)
+    private Collider2D coll;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!ranged && collision.gameObject.CompareTag("Player"))
+        if (!ranged && collision.gameObject.CompareTag("ShipPart"))
         {
             coll = collision;
             canAttack = true;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!ranged && collision.gameObject.CompareTag("Player"))
+        if (!ranged && collision.gameObject.CompareTag("ShipPart"))
         {
             canAttack = false;
         }

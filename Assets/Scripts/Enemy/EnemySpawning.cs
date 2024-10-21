@@ -8,7 +8,7 @@ public class EnemySpawning : MonoBehaviour
 {
     [SerializeField]
     List<GameObject> enemies = new List<GameObject>();
-    public float offset=2;
+    public float offset = 2;
     public bool startSpawning = false;
     float timer = 0;
     public float spawningInterval = 1;
@@ -29,12 +29,26 @@ public class EnemySpawning : MonoBehaviour
         float x = Mathf.Cos(angle) * Camera.main.orthographicSize * offset;
         float y = Mathf.Sin(angle) * Camera.main.orthographicSize * offset;
         Vector3 spawnPosition = new Vector3(x, y, 1) + Camera.main.transform.position;
-        Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, Quaternion.identity);        
+        Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, Quaternion.identity);
     }
 
 
+    private void OnEnable()
+    {
+        InvasionTimer.OnTimesUp += StartCombat;
+    }
+
+    private void OnDisable()
+    {
+        InvasionTimer.OnTimesUp -= StartCombat;
+    }
+
+    void StartCombat()
+    {
+        startSpawning = true;
+    }
     private void Update()
-    {     
+    {
         if (startSpawning)
         {
             timer += Time.deltaTime;

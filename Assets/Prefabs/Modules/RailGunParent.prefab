@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Railgun
       objectReference: {fileID: 0}
+    - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+      propertyPath: gunType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 4367804453673266805, guid: d39d9010c144f854d832cbe778f189b4, type: 3}
+    - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+      propertyPath: fireCooldown
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 6225506842980534407, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -58,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0eb340b59fde6c64f924939257909107, type: 3}
     - target: {fileID: 8115033291978731250, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
       propertyPath: m_Name
-      value: RailgunParent
+      value: RailGunParent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
