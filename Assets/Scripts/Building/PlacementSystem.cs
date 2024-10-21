@@ -22,7 +22,7 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     PlayerResources playerRes;
     [HideInInspector]
-    public int minX = 0, maxX = 0, minY = 0, maxY = 0;
+    public int minX = 0, maxX = 1, minY = 0, maxY = 1;
 
     public GridData blockData;
     private List<int> fourSideBlocks = new List<int>();
@@ -139,9 +139,9 @@ public class PlacementSystem : MonoBehaviour
     void UpdateMinMax(Vector3Int position)
     {
         if (position.x < minX) minX = position.x;
-        else if (position.x > maxX) maxX = position.x;
+        else if (position.x > maxX - 1) maxX = position.x + 1;
         if (position.y < minY) minY = position.y;
-        else if (position.y > maxY) maxY = position.y;
+        else if (position.y > maxY - 1) maxY = position.y + 1;
     }
 
     void Update()
