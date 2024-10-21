@@ -48,6 +48,10 @@ PrefabInstance:
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+      propertyPath: gunType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
       propertyPath: bulletSpeed
       value: 15
       objectReference: {fileID: 0}
@@ -144,3 +148,4 @@ MonoBehaviour:
   firePoint: {fileID: 8304891668832914123}
   bulletSpeed: 15
   fireCooldown: 0.5
+  gunType: 0

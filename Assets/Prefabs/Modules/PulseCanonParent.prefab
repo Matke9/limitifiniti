@@ -132,3 +132,4 @@ MonoBehaviour:
   firePoint: {fileID: 2400706723417473979}
   bulletSpeed: 15
   fireCooldown: 1
+  gunType: 2

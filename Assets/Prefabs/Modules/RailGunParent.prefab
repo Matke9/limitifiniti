@@ -13,6 +13,10 @@ PrefabInstance:
       value: Railgun
       objectReference: {fileID: 0}
     - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
+      propertyPath: gunType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030964578534189266, guid: 3a74ddcbebe4ef24a971c20110cb8c49, type: 3}
       propertyPath: bulletSpeed
       value: 15
       objectReference: {fileID: 0}
