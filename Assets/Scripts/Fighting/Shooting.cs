@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField] private float fireCooldown = 1f;
+    private CameraController camController;
+
+    private float timeSinceLastShot;
     void Start()
     {
-        
+        camController = Camera.main.GetComponent<CameraController>();
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButton(0) && timeSinceLastShot >= fireCooldown && camController.camMode == CameraController.CamMode.Combat)
+        {
+            Shoot();
+            timeSinceLastShot = 0f;
+        }
+
+        timeSinceLastShot += Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Shoot()
     {
-        
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.velocity = firePoint.up * bulletSpeed;
     }
 }

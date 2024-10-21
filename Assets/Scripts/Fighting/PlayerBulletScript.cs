@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class PlayerBulletScript : MonoBehaviour
 {
     public float life = 10;
     public int damage = 1;
@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Skidanje Healtha i tako to
-        if (collision.transform.tag == "ShipPart")
+        if (collision.transform.tag == "Enemy")
         {
             try
             {
