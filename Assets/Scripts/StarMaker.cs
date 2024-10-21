@@ -18,7 +18,7 @@ public class StarMaker : MonoBehaviour
     {
         // Find the player
         player = Camera.main.transform;
-
+        spawnRadius*=Camera.main.orthographicSize;
         // Initialize sets
         visitedCells = new HashSet<Vector2Int>();
         spawnedPositions = new List<Vector2>();

@@ -8,6 +8,7 @@ TagManager:
   - Resource
   - Destroyer
   - Enemy
+  - BuildingSys
   layers:
   - Default
   - TransparentFX

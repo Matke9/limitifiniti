@@ -16,7 +16,7 @@ public class PlacementSystem : MonoBehaviour
     int selectedBlockID = -1;
     [SerializeField]
     GameObject ship;
-    ShipController shipController;
+    public ShipController shipController;
     [SerializeField]
     GameObject gridShader;
     [SerializeField]
@@ -24,7 +24,7 @@ public class PlacementSystem : MonoBehaviour
     [HideInInspector]
     public int minX = 0, maxX = 0, minY = 0, maxY = 0;
 
-    private GridData blockData;
+    public GridData blockData;
     private List<int> fourSideBlocks = new List<int>();
 
     void Start()

@@ -34,7 +34,6 @@ public class GridData
             if (placedBlocks[key] == 2)
                 thrusterCount++;
         }
-        Debug.Log(thrusterCount + " " + placedBlocks.Count);
         return thrusterCount / (float)placedBlocks.Count;
     }
 }

@@ -47,6 +47,6 @@ MonoBehaviour:
   starPrefabs:
   - {fileID: 88610513571745112, guid: 773fe52e1663e014db2c9301fcaacc76, type: 3}
   starsPerCell: 100
-  spawnRadius: 15
+  spawnRadius: 6
   gridCellSize: 10
   starMinDistance: 5
