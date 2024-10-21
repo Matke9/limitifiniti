@@ -7,15 +7,18 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] GameObject panelR, panelT, panelB, tutorialP;
+    [SerializeField] GameObject t1, t2;
 
-    private void Start()
+    public void Next()
     {
-        if(PlayerPrefs.GetInt("Tutorial") == 0)
-        {
-
-        }
+        t1.SetActive(false);
+        t2.SetActive(true);
     }
 
+    public void Back()
+    {
+        t1.SetActive(true);
+        t2.SetActive(false);
+    }
 
 }
