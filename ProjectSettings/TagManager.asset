@@ -9,6 +9,7 @@ TagManager:
   - Destroyer
   - Enemy
   - BuildingSys
+  - Cigan
   layers:
   - Default
   - TransparentFX

@@ -22,10 +22,11 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed = 10;
     private bool canShoot = false, canAttack = false;
     private float strikeTimer = 0f;
-    
+    private AudioSource attack;
 
     private void Start()
     {
+        attack = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         mainCamera = Camera.main;
@@ -38,7 +39,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         //Pozicija
-        Vector3 positionToFollow = mainCamera.transform.position;//Moze da se menja po potrebi
+        Vector3 positionToFollow = GameObject.FindGameObjectWithTag("Cigan").transform.position;//Moze da se menja po potrebi
         float distanceToCamera = Vector2.Distance(transform.position, positionToFollow);
         Vector3 targetPosition;
 
@@ -83,7 +84,7 @@ public class EnemyController : MonoBehaviour
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<BulletScript>().damage = damage;
-            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;           
         }
         else
         {
@@ -93,6 +94,7 @@ public class EnemyController : MonoBehaviour
             }
             catch { }
         }
+        attack.Play();
     }
 
     private Collider2D coll;
