@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateTriggerState(Collider2D collision, bool state)
     {
-        if (collision.gameObject.layer == 6 && camControler.camMode == CameraController.CamMode.Player)
+        if (collision.gameObject.layer == 12 && camControler.camMode == CameraController.CamMode.Player)
         {
             eLetter.SetActive(state);
             canClickE = state;
