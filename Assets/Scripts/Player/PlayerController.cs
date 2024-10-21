@@ -27,9 +27,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlacementSystem placementSystem;
 
+    AudioSource engine;
+
 
     void Start()
     {
+        engine = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         canClickE = false;
         camControler = Camera.main.GetComponent<CameraController>();
@@ -64,6 +67,12 @@ public class PlayerController : MonoBehaviour
                 transform.GetChild(i).gameObject.SetActive(true);
             }
         }
+        float velocityMagnitude = rb.velocity.magnitude;
+        float newPitch = Mathf.Clamp(velocityMagnitude * 0.1f, 0.5f, 2);
+
+        // Apply the new pitch to the AudioSource
+        engine.pitch = newPitch;
+
     }
 
     private void DisablePlayer()
