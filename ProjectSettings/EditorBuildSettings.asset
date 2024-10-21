@@ -6,15 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: d3d56548220cad44381a00b7642cb0fc
   - enabled: 1
     path: Assets/Scenes/BuildAndFight.unity
     guid: ff608b9b9fdc77547a8b280913e1daf5
-  - enabled: 1
-    path: Assets/Scenes/Alek.unity
-    guid: 5034717d7351bc04680311824200c939
-  - enabled: 1
-    path: Assets/Scenes/Stefan.unity
-    guid: c9f92fee359be3c43af091e5221672c9
   m_configObjects: {}

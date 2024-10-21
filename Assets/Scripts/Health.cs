@@ -24,6 +24,10 @@ public class Health : MonoBehaviour
             if (transform.tag == "ShipPart")
             {
                 buildSys.shipController.moveSpeed = buildSys.shipController.speedMultiplier * buildSys.blockData.GetThrusterRatio();
+                if (GetComponent<Die>())
+                {
+                    GetComponent<Die>().Death();
+                }
                 Destroy(gameObject);
             }
         }
