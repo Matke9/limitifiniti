@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         //Pozicija
-        Vector3 positionToFollow = mainCamera.transform.position;//Moze da se menja po potrebi
+        Vector3 positionToFollow = GameObject.FindGameObjectWithTag("Cigan").transform.position;//Moze da se menja po potrebi
         float distanceToCamera = Vector2.Distance(transform.position, positionToFollow);
         Vector3 targetPosition;
 
